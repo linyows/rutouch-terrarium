@@ -9,7 +9,6 @@ pub fn user_entrypoint(_req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
     let req = Request::builder()
         .method("GET")
         .uri(url)
-        .header("User-Agent", "Rutouch Terrarium")
         .body(vec)
         .unwrap();
     RequestExt::send(req).expect("request failed")
